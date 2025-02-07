@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Font style console</title>
+
+		<meta 
+			name="Kris" 
+			content="YourName">
+		<meta 
+			name="description" 
+			content="This page uses buttons and text input to style some fonts">
+		<meta charset="UTF-8">
+		
+		<!--
+			Created:	27. Sept 2015											- Drapak
+			Modified:	5. March 2017	- reworked for better programming style	- Drapak
+						30. April 2017	- fixed long lines						- Drapak
+						25. Feb 2018	- changed criteria to make less boring	- Drapak
+						12. Oct 2018	- added specific style criteria			- Drapak
+						08. Oct 2024    - made code copy, inserted image links  - Chisholm
+						09. Oct 2024 	- created button ids 					- Chisholm
+						10. Oct 2024    - styled buttons set positions          - Chisholm
+						14. Oct 2024    - coded images to react to buttons      - Chisholm
+						17. Oct 2024 	- 										- Chisholm
+			Finished:	
+		-->
+
+		<style>
+			img{
+				position:  		absolute;
+				width:    		500px;
+				left:     		600px;	
+				top: 			200px;			
+			}
+
+			.link {
+				position: 		absolute;
+				width:    		300px;
+				left:     		600px;
+				visibility:	    hidden; 
+			}
+
+			.button {
+				position: 		absolute;
+				width:    		200px;
+				font-family: 	Georgia, serif;
+				font-size: 		15px;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#0F3759;
+				background-color: #9BCCAF;
+				border:         2px solid #4D8D68;
+			}
+
+			#skywardSword {
+				position: 	absolute;
+				top:      	200px;
+			}	
+
+		    #linkBtwnWorlds {
+				position: 	absolute;
+				top:      	230px;
+			}
+
+			#tearsOfTheKingdom {
+				position: 	absolute;
+				top:      	275px;
+			}
+
+			#echoesOfWisdom {
+				position: 	absolute;
+				top:      	320px;
+			}
+
+			#linksAwakening {
+				position: 	absolute;
+				top:      	365px;
+			}
+
+			#ocarinaOfTime {
+				position: 	absolute;
+				top:      	410px;
+			}
+
+			#windWaker {
+				position: 	absolute;
+				top:      	440px;
+			}
+
+			#minishCap {
+				position: 	absolute;
+				top:      	470px;
+			}
+			
+			#twilightPrincess {
+				position: 	absolute;
+				top:      	500px;
+			}
+
+			#linkToThePast {
+				position: 	absolute;
+				top:      	545px;
+			}
+
+			#breathOfTheWild {
+				position: 	absolute;
+				top:      	590px;
+			}
+
+			#majorasMask {
+				position: 	absolute;
+				top:      	635px;
+			}
+
+			#theLegendOfZelda {
+				position: 	absolute;
+				top:      	665px;
+			}
+
+			#lameButton {
+				position: 	absolute;
+				top:      	710px;
+			}
+
+			#colourChange {
+				position: 		absolute;
+				width:    		200px;
+				font-family: 	Georgia, serif;
+				font-size: 		15px;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#0F3759;
+				background-color: #9BCCAF;
+				border:         2px solid #4D8D68;				
+				top:            140px;
+				left: 			200px;
+			}
+
+			#borderButton {
+				position: 		absolute;
+				width:    		30px;
+				font-family: 	Georgia, serif;
+				font-size: 		15px;
+				font-weight: 	bold;
+				font-style: 	italic;
+				color:			#0F3759;
+				background-color: #9BCCAF;
+				border:         2px solid #4D8D68;				
+				top:            82px;
+				left: 			375px;
+			}
+
+			#zeldaGameButton {
+				position: 		absolute;
+				width:    		350px;
+				font-family: 	Georgia, serif;
+				font-size: 		12px;
+				font-weight: 	bold;
+				color:			#0F3759;
+				background-color: #9BCCAF;
+				border:         2px solid #4D8D68;				
+				top:            60px;
+			}		
+
+			#inputTextId {
+				position:      	absolute;
+				top:     		140px;
+			}
+
+		</style>
+	</head>
+
+	<body id="bodyId">
+		<!-- The assignment: Create a page that uses Javascript to adjust font characteristics
+
+			1.	create the HTML of your page, including:
+				a.	a header
+				b.	buttons
+				c.	text inputs
+				d.	a table to contain it all
+				e.	a div to use for output
+			2.	give things IDs so they can be accessed
+			3.	use Javascript to add onclick and onchange triggers to IDs
+			4.	add functions to change the styles of your text example
+			
+			Evaluation
+			
+			_._/10 HTML-CSS: including ANY TEN of the following:
+				[]	a span
+				[-]	a heading
+				[]	a table
+				[-]	a div for output
+				[]	a descriptive paragraph
+				[] a list
+				
+				The following MUST be applied inside <style>:
+				
+				[-]	applying a style to a tag
+				[-]	applying a style to an #ID or .class
+				[-]	applying a color, opacity, or background color
+				[-]	applying a border
+				[-]	applying a font size
+				[-]	applying the font family, style, or weight
+				[-]	applying the width
+				[]	applying text-align or vertical-align
+				[-]	applying a position
+				[-]	applying a top measurement
+				[-]	applying a left measurement
+				[]	applying a display style
+				[]	applying margin-left or margin-right
+				
+			_._/10 INPUT: including ANY FOUR of the following:
+				[-]	a text area box
+				[-]	an input line
+				[-]	buttons
+				[-]	things that work with document.getElementById().onclick
+				[]	things that work with document.getElementById().onchange
+				
+			___/10 PROCESS: including:    *do more here*
+				[-]	successfully reading a text input
+				[-]	assigning a variable
+				[-]	using basic math
+				[-]	using parseInt() or parseFloat()
+				
+			___/10 OUTPUT: including ANY FOUR of the following:  
+				[-]	changing the color or background using Javascript
+				[-]	changing the weight or style of a font using Javascript
+				[]	changing the size of a font using Javascript
+				[-]	changing the top or left position of something using Javascript
+				[-] changing the border or width of something using Javascript
+				[-]	output using .innerHTML
+				
+			___/10 STYLE:
+				[-]	add your name to the filename
+				[-]	write your name as the author
+				[-]	update the change log
+				[-]	correctly indent everything
+				[-]	use lowercase for all your HTML tags
+				[-]	use camelCase for all your ids and classes
+				[-]	avoid lines greater than 96 characters in length
+				[-]	restrict your style code to the head of your HTML file
+				[-]	space out your mathematical operators
+
+	<textarea id="mathsBox">
+		#mathsBox {
+				position:  		absolute;
+				top:  			1000px;
+			}
+
+------------STYLE GUIDE FOR LONG LINES: DO NOT PASS COLUMN 95 -------------------------------|
+		-->
+		
+		<h1 id="heading">2.05: Hand-in: Font style console</h1>
+		<button id=zeldaGameButton>
+		<h2>What's your favourite Zelda game?</h2>
+		</button>
+
+		<textarea id="inputTextId">
+
+		</textarea><br />
+		<button id="colourChange">
+			Input my answer!! 
+		</button>
+		<button id="borderButton">
+			:P
+		</button>
+		<hr />	
+
+		<div id="outputId"></div>
+
+		<button class="button" id="skywardSword">
+            Link - Skyward Sword
+        </button>
+
+		<button class="button" id="linkBtwnWorlds">
+            Link - A Link Between Worlds
+        </button><br>
+
+		<button class="button" id="tearsOfTheKingdom">
+            Link - Tears of the Kingdom
+        </button> 
+
+		<button class="button" id="echoesOfWisdom">
+            Zelda - Echoes of Wisdom
+        </button> <br>
+
+		<button class="button" id="linksAwakening">
+            Link - Links Awakening 
+        </button>
+
+		<button class="button" id="ocarinaOfTime">
+            Link - Ocarina of Time
+        </button> <br>
+
+		<button class="button" id="windWaker">
+            Link - The Wind Waker
+        </button>
+
+		<button class="button" id="minishCap">
+            Link - The Minish Cap
+        </button> <br>
+
+		<button class="button" id="twilightPrincess">
+            Link - Twilight Princess
+        </button> 
+
+		<button class="button" id="linkToThePast">
+            Link - A Link to the Past  
+        </button> <br>
+
+		<button class="button" id="breathOfTheWild">
+            Link - Breath of the Wild
+        </button> 
+		
+		<button class="button" id="majorasMask">
+            Link - Majora's Mask
+        </button> <br>
+
+        <button class="button" id="theLegendOfZelda">
+            Link - The Legend of Zelda (1986)
+        </button>
+
+        <button class="button" id="lameButton">
+        	Link - Hyrule Warriors
+        </button>
+
+		<img
+			id="skywardLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/characterprofile/images/9/92/Skyward_Link.png/revision/latest?cb=20160117100809">
+
+		<img
+			id="betweenWorldsLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/vsbattles/images/e/e3/Link_%28The_Legend_of_Zelda_A_Link_Between_Worlds%29.png/revision/latest/scale-to-width-down/1200?cb=20151115183818">
+
+		<img
+			id="totkLink"			
+			class="link"
+			src="https://www.zeldadungeon.net/wiki/images/thumb/f/f5/Link_-_TotK_key_art.png/400px-Link_-_TotK_key_art.png">
+
+		<img
+			id="echoesZelda"			
+			class="link"
+			src="https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/c_scale,w_400/ncom/software/switch/70010000084618/desc/TLOZ-EOW_Char">
+
+		<img
+			id="awakeningLink"
+			class="link"
+			src="https://zelda.nintendo.com/links-awakening/assets/img/home/hero-char.png">
+
+		<img
+			id="ocarinaLink"
+			class="link"
+			src="https://www.zeldadungeon.net/wiki/images/thumb/e/ee/Links_-_OOT.png/400px-Links_-_OOT.png">
+
+		<img
+			id="windWakerLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/vsbattles/images/4/4c/WiiU_Wind_Waker_Link.png/revision/latest?cb=20151115121618">
+
+		<img
+			id="minishCapLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/versus-compendium/images/3/3d/Link_MC.png/revision/latest?cb=20181117214900">
+
+		<img
+			id="twilightLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/characterprofile/images/c/cb/LoZ_TP_Link.png/revision/latest/scale-to-width-down/1200?cb=20240319213550">
+
+		<img
+			id="toThePastLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/versus-compendium/images/3/39/Link_ALTTP.png/revision/latest?cb=20180926100609">
+
+		<img
+			id="botwLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/characterprofile/images/c/c8/BotW_Link.png/revision/latest?cb=20170306180639">
+
+		<img
+			id="tlozLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/versus-compendium/images/3/31/Classic_Link.png/revision/latest?cb=20180927104709">
+
+		<img
+			id="majorasMaskLink"
+			class="link"
+			src="https://static.wikia.nocookie.net/vsbattles/images/0/00/N3DS_TheLegendofZeldaMajorasMask3D_character_02.png/revision/latest?cb=20180705143938">
+
+		<!--
+		hello kris, this is me writing you a little message
+		make sure you learn how to style your buttons with java, ask the king wagley 
+		then do something with the font style, you need to follow all the guidelines
+		lock in. 
+		hello kris, reporting again. please do some maths :<
+		-->
+		<div id="imageOutputBox"></div>
+
+ 		<script>
+			//INPUT-OUTPUT: updateText reads #inputTextId and places that inside #outputId
+			var updateText =function(){
+				// INPUT: read the example text
+				var exampleText	= document.getElementById('inputTextId').value;
+				
+				// OUTPUT: output the example text
+				document.getElementById('outputId').innerHTML	= exampleText;
+			}
+			
+			var mainProcedure =function(){
+				// INPUT: take inserted number
+				console.log("in mainProcedure");
+                var numberText = document.querySelector( '#inputTextId' ).value;
+                var parseNumber = parseInt( numberText );
+                var answer = Math.PI * ( Math.pow( parseNumber, 7 ) );
+                // OUTPUT: when button is pressed, show answer in console log.
+                console.log(answer);
+            }
+
+
+			// OUTPUT: this is triggered by specific button, 
+            //         and shows the image of link from said game
+           
+            var skywardSwordDisplay =function(){
+            	console.log("in skywardSwordDisplay");
+            	document.getElementById("imageOutputBox").innerHTML = "<img src='https://static.wikia.nocookie.net/characterprofile/images/9/92/Skyward_Link.png/revision/latest?cb=20160117100809'>";
+            }
+
+            var linkBtwnWorldsDisplay =function(){
+            	console.log("in linkBtwnWorldsDisplay");
+            	document.getElementById("imageOutputBox").innerHTML = "<img src='https://static.wikia.nocookie.net/vsbattles/images/e/e3/Link_%28The_Legend_of_Zelda_A_Link_Between_Worlds%29.png/revision/latest/scale-to-width-down/1200?cb=20151115183818'>";
+            }
+
+            var totkLinkDisplay =function(){
+            	console.log("in totkLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML = "<img src='https://www.zeldadungeon.net/wiki/images/thumb/f/f5/Link_-_TotK_key_art.png/400px-Link_-_TotK_key_art.png'>";
+            }
+
+            var echoesZeldaDisplay =function(){ 
+            	console.log("in echoesZeldaDisplay");
+            	document.getElementById("imageOutputBox").innerHTML = "<img src='https://assets.nintendo.com/image/upload/f_auto/q_auto/dpr_1.5/c_scale,w_400/ncom/software/switch/70010000084618/desc/TLOZ-EOW_Char'>";
+            }
+
+            var awakeningLinkDisplay =function(){ 
+            	console.log("in awakeningLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://zelda.nintendo.com/links-awakening/assets/img/home/hero-char.png'>";
+            }
+
+            var ocarinaLinkDisplay =function(){ 
+            	console.log("in ocarinaLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://www.zeldadungeon.net/wiki/images/thumb/e/ee/Links_-_OOT.png/400px-Links_-_OOT.png'>";
+            }
+
+            var windWakerLinkDisplay =function(){ 
+            	console.log("in windWakerLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/vsbattles/images/4/4c/WiiU_Wind_Waker_Link.png/revision/latest?cb=20151115121618'>";
+            }
+
+            var minishCapLinkDisplay =function(){ 
+            	console.log("in minishCapLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/versus-compendium/images/3/3d/Link_MC.png/revision/latest?cb=20181117214900'>";
+            }
+
+            var twilightLinkDisplay =function(){ 
+            	console.log("in twilightLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/characterprofile/images/c/cb/LoZ_TP_Link.png/revision/latest/scale-to-width-down/1200?cb=20240319213550'>";
+            }
+
+            var toThePastLinkDisplay =function(){ 
+            	console.log("in toThePastLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/versus-compendium/images/3/39/Link_ALTTP.png/revision/latest?cb=20180926100609'>";
+            }
+
+            var botwLinkDisplay =function(){ 
+            	console.log("in botwLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/characterprofile/images/c/c8/BotW_Link.png/revision/latest?cb=20170306180639'>";
+            }
+
+            var tlozLinkDisplay =function(){ 
+            	console.log("in tlozLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/versus-compendium/images/3/31/Classic_Link.png/revision/latest?cb=20180927104709'>";
+            }
+
+            var majorasMaskLinkDisplay =function(){ 
+            	console.log("in majorasMaskLinkDisplay");
+            	document.getElementById("imageOutputBox").innerHTML ="<img src='https://static.wikia.nocookie.net/vsbattles/images/0/00/N3DS_TheLegendofZeldaMajorasMask3D_character_02.png/revision/latest?cb=20180705143938'>";
+            }
+
+       		var newBackground =function(){
+       			console.log("newBackground");
+            	document.getElementById("bodyId").style.backgroundColor = "#05c989";
+            }    
+
+            var border =function(){
+            	console.log("border");
+            	document.getElementById("imageOutputBox").style.border = "150px solid #038F60";
+            }
+
+            var textChange =function(){ 
+            	console.log("changes text to italic?");
+            	document.getElementById("heading").style.fontStyle = "italic";
+            }
+
+
+			//INPUT: trigger the image of link to show when the button is pressed.
+			document.body.onload = updateText;
+			document.getElementById("skywardSword").onclick = skywardSwordDisplay;
+			document.getElementById("linkBtwnWorlds").onclick = linkBtwnWorldsDisplay;
+			document.getElementById("tearsOfTheKingdom").onclick = totkLinkDisplay; 
+			document.getElementById("echoesOfWisdom").onclick = echoesZeldaDisplay
+			document.getElementById("linksAwakening").onclick = awakeningLinkDisplay;
+			document.getElementById("ocarinaOfTime").onclick = ocarinaLinkDisplay;
+			document.getElementById("windWaker").onclick = windWakerLinkDisplay;
+			document.getElementById("minishCap").onclick = minishCapLinkDisplay;
+			document.getElementById("twilightPrincess").onclick = twilightLinkDisplay;
+			document.getElementById("linkToThePast").onclick = toThePastLinkDisplay;
+			document.getElementById("breathOfTheWild").onclick = botwLinkDisplay;
+			document.getElementById("theLegendOfZelda").onclick = tlozLinkDisplay;
+			document.getElementById("majorasMask").onclick = majorasMaskLinkDisplay;
+			document.querySelector( "#colourChange" ).style.left = 200 + "px";
+			console.log("in colourChange");
+			document.getElementById("colourChange").onclick = newBackground; 
+			document.getElementById("borderButton").onclick = border;
+			document.getElementById("zeldaGameButton").onclick = textChange;
+            document.getElementById("lameButton").onclick  = mainProcedure;
+
+
+		</script>
+	</body>
+</html>
